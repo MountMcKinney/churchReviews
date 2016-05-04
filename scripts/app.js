@@ -1,21 +1,21 @@
 (function() {
-  var app = angular.module('gemStore', ['store-directives']);
+  var app = angular.module('churchList', ['list-directives', 'profile-directives']);
 
-app.controller('StoreController', ['$http',function($http){
-    var store = this;
+app.controller('ListController', ['$http',function($http){
+    var list = this;
 
-    store.products = [];
+    list.churches = [];
 
-    $http.get('scripts/store-products.json').success(function(data){
-      store.products = data;
+    $http.get('scripts/church-list.json').success(function(data){
+      list.churches = data;
     });
   }]);
 
   app.controller('ReviewController', function() {
     this.review = {};
 
-    this.addReview = function(product) {
-      product.reviews.push(this.review);
+    this.addReview = function(church) {
+      church.reviews.push(this.review);
 
       this.review = {};
     };

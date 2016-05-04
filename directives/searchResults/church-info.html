@@ -1,0 +1,9 @@
+<h2><church-favorite></church-favorite>{{church.name}}</h2>
+<h5>{{church.diocese}}, {{church.state}}</h5>
+<address>
+  {{church.address}}<br />
+  <a href="tel:{{church.phone}}">{{church.phone}}<br />
+  <a href="{{church.website}}">{{church.website}}</a>
+</address>
+<blockquote>{{church.description}}</blockquote>
+<div church-mass-times></div>

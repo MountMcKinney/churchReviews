@@ -1,0 +1,45 @@
+<!--  Church Reviews List -->
+<ul class="list-unstyled">
+  <h4>Reviews</h4>
+  <li ng-repeat="review in church.reviews">
+    <blockquote>
+      <strong>{{review.stars}} Stars</strong>
+      {{review.body}}
+      <cite class="clearfix">—{{review.author}}</cite>
+    </blockquote>
+  </li>
+</ul>
+
+<!--  Review Form -->
+<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(church)">
+
+  <!--  Live Preview -->
+  <blockquote >
+    <strong>{{reviewCtrl.review.stars}} Stars</strong>
+    {{reviewCtrl.review.body}}
+    <!-- Pass this in automatically based on the user's account -->
+    <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+  </blockquote>
+
+  <!--  Review Form -->
+  <h4>Submit a Review</h4>
+  <fieldset class="form-group">
+    <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+      <!-- Pull in the church's name for below -->
+      <option value>Rate this Church</option>
+    </select>
+  </fieldset>
+  <fieldset class="form-group">
+    <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the church..." title="Review"></textarea>
+  </fieldset>
+    <!-- Pass this in automatically based on the user's account -->
+  <fieldset class="form-group">
+    <input ng-model="reviewCtrl.review.author" type="text" class="form-control" placeholder="John Smith" title="name" />
+  </fieldset>
+  <!-- <fieldset class="form-group">
+    <input ng-model="reviewCtrl.review.authorEmail" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+  </fieldset> -->
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+  </fieldset>
+</form>
