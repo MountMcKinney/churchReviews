@@ -3,7 +3,10 @@
     "name": "St. Augustine Catholic Church",
     "state": "FL",
     "diocese": "Diocese of St. Augustine",
-    "address": "1738 W University Ave, Gainesville, FL 32603",
+    "street": "1738 W University Ave",
+    "city": "Gainesville",
+    "state": "FL",
+    "zip": "32603",
     "phone": "(352) 372-3533",
     "website": "http://catholicgators.org",
     "description": "Bringing Christ to the University of Florida campus.",
@@ -14,10 +17,19 @@
     "images": [
       "/img/fl-saintaug-staug.jpg"
     ],
-    "masses": [
-      "Sunday: 9:00am, 11:30am, 1:30pm (Spanish), 5:30pm, 7:30pm",
-      "Saturday: 5:30pm (Vigil)",
-      "Weekdays: 12:00pm, 5:30pm"
+    "sundayMasses": [
+      "9:00am",
+      "11:30am",
+      "1:30pm (Spanish)",
+      "5:30pm",
+      "7:30pm"
+    ],
+    "saturdayMasses": [
+      "5:30pm (Vigil)"
+    ],
+    "weekdayMasses": [
+      "12:00pm",
+      "5:30pm"
     ],
     "reviews": []
   },
@@ -25,7 +37,11 @@
     "name": "Holy Name of Jesus Catholic Church",
     "state": "FL",
     "diocese": "Diocese of Pensacola-Tallahassee",
-    "address": "1200 Valparaiso Blvd, Niceville, FL 32578",
+    "street": "1200 Valparaiso Blvd",
+    "city": "Niceville",
+    "state": "FL",
+    "zip": "32578",
+    "cityState": "",
     "phone": "(850) 678-7813",
     "website": "http://holynamechurch.org",
     "description": "Small Town Feel.",
@@ -36,10 +52,17 @@
     "images": [
       "/img/fl-pental-holyname.jpg"
       ],
-    "masses": [
-      "Sunday: 8:00am, 11:00am, 5:00pm",
-      "Saturday: 5:00pm (Vigil)",
-      "Weekdays: 8:00am, 6:00pm"
+    "sundayMasses": [
+      "8:00am",
+      "11:00am",
+      "5:00pm"
+    ],
+    "saturdayMasses": [
+      "5:00pm (Vigil)"
+    ],
+    "weekdayMasses": [
+      "8:00am",
+      "6:00pm"
     ],
     "reviews": []
   },
@@ -47,7 +70,10 @@
     "name": "St. Patrick's Cathedral",
     "state": "NY",
     "diocese": "Archdiocese of New York",
-    "address": "5th Ave, New York, NY 10022",
+    "street": "5th Ave",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10022",
     "phone": "(212) 753-2261",
     "website": "http://saintpatrickscathedral.org",
     "description": "Bringing Christ to the world.",
@@ -58,10 +84,29 @@
     "images": [
       "/img/ny-archny-stpat.jpg"
       ],
-    "masses": [
-      "Sunday: 7:00am, 8:00am, 9:00am, 10:15am, 12:00pm, 1:00pm, 4:00pm (Spanish), 5:30pm",
-      "Saturday: 8:00am (Chapel), 12:00pm, 5:30pm (Vigil)",
-      "Weekdays: 7:00am, 7:30am, 8:00am, 12:00pm, 12:30pm, 1:00pm, 5:30pm"
+    "sundayMasses": [
+      "7:00am",
+      "8:00am",
+      "9:00am",
+      "10:15am",
+      "12:00pm",
+      "1:00pm",
+      "4:00pm (Spanish)",
+      "5:30pm"
+    ],
+    "saturdayMasses": [
+      "8:00am (Chapel)",
+      "12:00pm",
+      "5:30pm (Vigil)"
+    ],
+    "weekdayMasses": [
+      "7:00am",
+      "7:30am",
+      "8:00am",
+      "12:00pm",
+      "12:30pm",
+      "1:00pm",
+      "5:30pm"
     ],
     "reviews": []
   }

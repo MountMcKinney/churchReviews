@@ -23,11 +23,16 @@
     <div class="list-group">
       <!--  Church Container  -->
       <div class="list-group-item" ng-repeat="church in list.churches">
+        <!-- Church Title -->
+        <div class="row">
+          <church-title class="col-md-12"></church-title>
+        </div>
         <div class="row">
           <!-- Image Gallery  -->
-          <church-gallery class="col-md-3 pull-left"></church-gallery>
+          <church-gallery class="col-md-3"></church-gallery>
           <!-- Info About the Church -->
-          <church-info class="col-md-9 pull-right"></church-info>
+          <church-info class="col-md-4"></church-info>
+          <div church-mass-times class="col-md-5"></div>
         </div>
         <div class="row">
           <!-- Church Tabs  -->

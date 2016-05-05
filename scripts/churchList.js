@@ -1,6 +1,13 @@
 (function(){
     var app = angular.module('list-directives', []);
 
+    app.directive("churchTitle", function() {
+      return {
+        restrict: 'E',
+        templateUrl: "../directives/searchResults/church-title.html"
+      };
+    });
+
     // This directive populates the header with favorite, name, diocese, state, address, and mass times
     app.directive("churchInfo", function() {
       return {
@@ -29,7 +36,7 @@
         }
       };
     });
-
+    
     app.directive("churchMassTimes", function() {
       return {
         restrict: 'A',
