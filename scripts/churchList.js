@@ -36,11 +36,18 @@
         }
       };
     });
-    
-    app.directive("churchMassTimes", function() {
+
+    app.directive("churchSundayMassTimes", function() {
       return {
         restrict: 'A',
-        templateUrl: "../directives/searchResults/church-mass-times.html"
+        templateUrl: "../directives/searchResults/church-sunday-mass-times.html"
+      };
+    });
+
+    app.directive("churchWeekdayMassTimes", function() {
+      return {
+        restrict: 'A',
+        templateUrl: "../directives/searchResults/church-weekday-mass-times.html"
       };
     });
 

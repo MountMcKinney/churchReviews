@@ -18,14 +18,12 @@
       "/img/fl-saintaug-staug.jpg"
     ],
     "sundayMasses": [
+      "5:30pm (Saturday Vigil)",
       "9:00am",
       "11:30am",
       "1:30pm (Spanish)",
       "5:30pm",
       "7:30pm"
-    ],
-    "saturdayMasses": [
-      "5:30pm (Vigil)"
     ],
     "weekdayMasses": [
       "12:00pm",
@@ -44,7 +42,7 @@
     "cityState": "",
     "phone": "(850) 678-7813",
     "website": "http://holynamechurch.org",
-    "description": "Small Town Feel.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "music": 3,
     "welcomeness": 5,
     "preaching": 3,
@@ -53,12 +51,10 @@
       "/img/fl-pental-holyname.jpg"
       ],
     "sundayMasses": [
+      "5:00pm (Vigil)",
       "8:00am",
       "11:00am",
       "5:00pm"
-    ],
-    "saturdayMasses": [
-      "5:00pm (Vigil)"
     ],
     "weekdayMasses": [
       "8:00am",
@@ -85,6 +81,7 @@
       "/img/ny-archny-stpat.jpg"
       ],
     "sundayMasses": [
+      "5:30pm (Saturday Vigil)",
       "7:00am",
       "8:00am",
       "9:00am",
@@ -94,11 +91,6 @@
       "4:00pm (Spanish)",
       "5:30pm"
     ],
-    "saturdayMasses": [
-      "8:00am (Chapel)",
-      "12:00pm",
-      "5:30pm (Vigil)"
-    ],
     "weekdayMasses": [
       "7:00am",
       "7:30am",
@@ -106,7 +98,9 @@
       "12:00pm",
       "12:30pm",
       "1:00pm",
-      "5:30pm"
+      "5:30pm",
+      "8:00am (Saturday)",
+      "12:00pm (Saturday)"
     ],
     "reviews": []
   }
