@@ -1,7 +1,7 @@
 (function() {
-  var app = angular.module('churchList', ['list-directives', 'profile-directives']);
+  var app = angular.module('churchList', ['ngAnimate', 'ui.bootstrap', 'list-directives', 'profile-directives']);
 
-app.controller('ListController', ['$http',function($http){
+  app.controller('ListController', ['$http',function($http){
     var list = this;
 
     list.churches = [];
@@ -11,7 +11,18 @@ app.controller('ListController', ['$http',function($http){
     });
   }]);
 
-  app.controller('ReviewController', function() {
+  app.controller('ChurchRatingCtrl', function ($scope) {
+    $scope.rate = 3;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function(value) {
+      $scope.overStar = value;
+      $scope.percent = 100 * (value / $scope.max);
+    };
+  });
+
+  app.controller('ReviewController', function($scope) {
     this.review = {};
 
     this.addReview = function(church) {
@@ -20,4 +31,5 @@ app.controller('ListController', ['$http',function($http){
       this.review = {};
     };
   });
+
 })();

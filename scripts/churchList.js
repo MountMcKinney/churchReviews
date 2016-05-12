@@ -85,4 +85,13 @@
         controllerAs: "gallery"
       };
     });
+
+    app.directive("addChurch", function() {
+      return {
+        restrict: 'E',
+        templateUrl: "../directives/searchResults/add-church.html"
+      };
+    });
+
+
   })();

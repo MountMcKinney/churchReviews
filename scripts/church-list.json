@@ -8,11 +8,11 @@
     "state": "FL",
     "zip": "32603",
     "phone": "(352) 372-3533",
-    "website": "http://catholicgators.org",
+    "website": "catholicgators.org",
     "description": "Bringing Christ to the University of Florida campus.",
-    "music": 4,
-    "welcomeness": 5,
-    "preaching": 5,
+    "avgMusicStars": 4.3,
+    "avgWelcomeStars": 3.5,
+    "avgPreachingStars": 3.4,
     "favorite": true,
     "images": [
       "/img/fl-saintaug-staug.jpg"
@@ -41,11 +41,11 @@
     "zip": "32578",
     "cityState": "",
     "phone": "(850) 678-7813",
-    "website": "http://holynamechurch.org",
+    "website": "holynamechurch.org",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "music": 3,
-    "welcomeness": 5,
-    "preaching": 3,
+    "avgMusicStars": 3,
+    "avgWelcomeStars": 0,
+    "avgPreachingStars": 1.2,
     "favorite": true,
     "images": [
       "/img/fl-pental-holyname.jpg"
@@ -71,11 +71,11 @@
     "state": "NY",
     "zip": "10022",
     "phone": "(212) 753-2261",
-    "website": "http://saintpatrickscathedral.org",
+    "website": "saintpatrickscathedral.org",
     "description": "Bringing Christ to the world.",
-    "music": 4,
-    "welcomeness": 3,
-    "preaching": 5,
+    "avgMusicStars": 4,
+    "avgWelcomeStars": 3,
+    "avgPreachingStars": 5,
     "favorite": true,
     "images": [
       "/img/ny-archny-stpat.jpg"

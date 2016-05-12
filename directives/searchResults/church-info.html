@@ -1,9 +1,16 @@
+<!-- Still need to figure out how to show percentages of stars -->
+
+<div ng-controller="ChurchRatingCtrl">
+  <strong>Preaching: </strong>
+  <uib-rating ng-model="church.avgPreachingStars" title="avgPreachingStars" max="max" read-only="!isReadonly"></uib-rating>
+</div>
+<div ng-controller="ChurchRatingCtrl">
+  <strong>Music: </strong>
+  <uib-rating ng-model="church.avgMusicStars" title="avgMusicStars" max="max" read-only="!isReadonly"></uib-rating>
+</div>
+<div ng-controller="ChurchRatingCtrl">
+  <strong>Welcomeness: </strong>
+  <uib-rating ng-model="church.avgWelcomeStars" title="avgWelcomeStars" max="max" read-only="!isReadonly"></uib-rating>
+</div>
 <h3>Description</h3>
 {{church.description}}<br>
-<h3>Details</h3>
-<address>
-  {{church.street}}<br />
-  {{church.city}}, {{church.state}} {{church.zip}}<br />
-  <a href="tel:{{church.phone}}">{{church.phone}}<br />
-  <a href="{{church.website}}">{{church.website}}</a>
-</address>

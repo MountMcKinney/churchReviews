@@ -1,4 +1,6 @@
-/*Add this to bootstrap*/
+a:link, a:visited, a:hover {
+  text-decoration: none;
+}
 
 .ng-invalid.ng-dirty {
   border-color: #fa787e;
@@ -13,8 +15,29 @@
   height: auto;
 }
 
+/* Star colors for reviews */
+i {
+  color: #1B5E20;
+}
 
-/*Favorite Heart*/
+/* Popup that overlays on the top right corner of the screen */
+
+.right-banner {
+  position: fixed;
+  right: 20px;
+  top: 120px;
+  padding: 10px 20px;
+  background: rgba(243,13,75,1);
+  text-align: center;
+}
+
+.right-banner a:link, .right-banner a:visited, .right-banner a:hover {
+  color: #fff;
+  background: #1B5E20;
+  padding: 5px 20px;
+}
+
+/* Favorite Heart */
 .fav-heart {
   font-size: 3rem;
 }

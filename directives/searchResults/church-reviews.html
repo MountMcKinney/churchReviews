@@ -1,14 +1,25 @@
 <!--  Church Reviews List -->
 <ul class="list-unstyled">
-  <h4>Reviews</h4>
+  <h3>Reviews</h3>
   <li ng-repeat="review in church.reviews">
     <blockquote>
-      <strong>Preaching: </strong>{{review.preachingStars}}<br>
-      <strong>Music: </strong>{{review.musicStars}}<br>
-      <strong>Welcomeness: </strong>{{review.welcomeStars}}<br>
+      <div ng-controller="ChurchRatingCtrl">
+        <strong>Preaching: </strong>
+        <uib-rating ng-model="review.preachingStars" title="preachingStars" max="max" read-only="!isReadonly"></uib-rating>
+      </div>
+      <div ng-controller="ChurchRatingCtrl">
+        <strong>Music: </strong>
+        <uib-rating ng-model="review.musicStars" title="musicStars" max="max" read-only="!isReadonly"></uib-rating>
+      </div>
+      <div ng-controller="ChurchRatingCtrl">
+        <strong>Welcomeness: </strong>
+        <uib-rating ng-model="review.welcomeStars" title="welcomeStars" max="max" read-only="!isReadonly"></uib-rating>
+        <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+      </div>
       <br>
       {{review.body}}
-      <cite class="clearfix">—{{review.author}}</cite>
+      <!-- Pass this in automatically based on the user's account -->
+      <cite class="clearfix">— <a href="profile.html">{{review.author}}</a></cite>
     </blockquote>
   </li>
 </ul>
@@ -18,41 +29,60 @@
 
   <!--  Live Preview -->
   <blockquote>
-    <strong ng-model="rating.isReadonly">Preaching: </strong>{{reviewCtrl.review.preachingStars}}<br>
-    <strong>Music: </strong>{{reviewCtrl.review.musicStars}}<br>
-    <strong>Welcomeness: </strong>{{reviewCtrl.review.welcomeStars}}<br>
+    <div ng-controller="ChurchRatingCtrl">
+      <strong>Preaching: </strong>
+      <uib-rating ng-model="reviewCtrl.review.preachingStars" title="preachingStars" max="max" read-only="!isReadonly"></uib-rating>
+    </div>
+    <div ng-controller="ChurchRatingCtrl">
+      <strong>Music: </strong>
+      <uib-rating ng-model="reviewCtrl.review.musicStars" title="musicStars" max="max" read-only="!isReadonly"></uib-rating>
+    </div>
+    <div ng-controller="ChurchRatingCtrl">
+      <strong>Welcomeness: </strong>
+      <uib-rating ng-model="reviewCtrl.review.welcomeStars" title="welcomeStars" max="max" read-only="isReadonly"></uib-rating>
+      <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+    </div>
     <br>
     {{reviewCtrl.review.body}}<br>
-    <!-- Pass this in automatically based on the user's account -->
-    <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+    <!-- Get rid of this when I pass through profiles -->
+    <cite class="clearfix">— {{reviewCtrl.review.author}}</cite>
   </blockquote>
 
+
+
   <!--  Review Form -->
-  <h4>Submit a Review</h4>
+  <h3>Submit Your Own Review</h3>
   <fieldset class="form-group">
-    <select class="form-group" ng-model="reviewCtrl.review.preachingStars" title="preachingStars">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select><br>
-    <select class="form-group" ng-model="reviewCtrl.review.musicStars" ng-options="musicStars for musicStars in [5,4,3,2,1]" title="musicStars">
-    </select><br>
-    <select class="form-group" ng-model="reviewCtrl.review.welcomeStars" ng-options="welcomeStars for welcomeStars in [5,4,3,2,1]" title="welcomeStars">
-    </select>
+    <div ng-controller="ChurchRatingCtrl">
+      <strong>Preaching: </strong>
+      <uib-rating ng-model="reviewCtrl.review.preachingStars" title="preachingStars" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+    </div>
+
+    <div ng-controller="ChurchRatingCtrl">
+      <strong>Music: </strong>
+      <uib-rating ng-model="reviewCtrl.review.musicStars" title="musicStars" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+    </div>
+
+    <div ng-controller="ChurchRatingCtrl">
+      <strong>Welcomeness: </strong>
+      <uib-rating ng-model="reviewCtrl.review.welcomeStars" title="welcomeStars" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+
+      <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+
+      <button type="button" class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+      <hr />
+    </div>
+
   </fieldset>
   <fieldset class="form-group">
     <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the church..." title="Review"></textarea>
   </fieldset>
-    <!-- Pass this in automatically based on the user's account -->
+    <!-- Get rid of this when I pass through profiles -->
   <fieldset class="form-group">
-    <input ng-model="reviewCtrl.review.author" type="text" class="form-control" placeholder="John Smith" title="name" />
+    <input ng-model="reviewCtrl.review.author" type="text" class="form-control" placeholder="This will be automatically passed in" title="name" />
   </fieldset>
-  <!-- <fieldset class="form-group">
-    <input ng-model="reviewCtrl.review.authorEmail" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
-  </fieldset> -->
   <fieldset class="form-group">
+    <!-- Add javascript to append a readonly class to the review upon submission -->
     <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
   </fieldset>
 </form>

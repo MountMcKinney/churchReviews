@@ -1,2 +1,8 @@
-<h2 class="text-success"><church-favorite></church-favorite>{{church.name}}</h2>
-<h4 class="text-primary">{{church.diocese}}, {{church.state}}</h4><br>
+<h2><church-favorite></church-favorite><a class="text-success" href="">{{church.name}}</a></h2>
+<h4>{{church.diocese}}, {{church.state}}</h4>
+<address>
+  {{church.street}}<br />
+  {{church.city}}, {{church.state}} {{church.zip}}<br />
+  <a href="tel:{{church.phone}}">{{church.phone}}<br />
+  <a href="http://{{church.website}}">{{church.website}}</a>
+</address>
