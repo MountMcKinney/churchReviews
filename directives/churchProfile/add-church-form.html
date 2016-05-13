@@ -1,0 +1,48 @@
+<form ng-controller="CollapseDemoCtrl" name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(church)">
+  <!-- Form to Create Church Review -->
+  <!-- This needs to query the DB based on the name of the church and what diocese they select -->
+  <!-- If it is a church in a diocese that already has a page it should:
+        -first populate the possibilities in the name field based on the diocese they select
+        -then if they select the option that the field brings up, append their review to that church
+        -if they don't select the church but enough criteria is the same, I should not let it submit giving them a reason why it's not submitting
+        -if it's not a possibility based on the query, then append the new church to the churches list
+      Use Typeahead (ui.bootstrap.typeahead)-->
+  <fieldset class="form-group">
+    <div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
+      <strong>State: </strong>
+      <input type="text" ng-model="stateSelectedOptions" ng-model-options="stateOptions" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" placeholder="Start typing state here" class="form-control">
+    </div>
+  </fieldset>
+  <fieldset class="form-group">
+    <select class="form-group" ng-model="reviewCtrl.review.states" ng-options="dioceses for dioceses in [St._Augustine, New_York, Pensacola-Tallahassee]">
+    </select>
+  </fieldset>
+
+  <a href="#" class="link-collapse" ng-click="isCollapsed = !isCollapsed">Would You Like To Add A Review?</a>
+  <div uib-collapse="isCollapsed">
+    <fieldset class="form-group">
+      <div ng-controller="ChurchRatingCtrl">
+        <strong>Preaching: </strong>
+        <uib-rating ng-model="reviewCtrl.review.preachingStars" title="preachingStars" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+      </div>
+      <div ng-controller="ChurchRatingCtrl">
+        <strong>Music: </strong>
+        <uib-rating ng-model="reviewCtrl.review.musicStars" title="musicStars" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+      </div>
+      <div ng-controller="ChurchRatingCtrl">
+        <strong>Welcomeness: </strong>
+        <uib-rating ng-model="reviewCtrl.review.welcomeStars" title="welcomeStars" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></uib-rating>
+      </div>
+    </fieldset>
+    <fieldset>
+      <textarea ng-model="reviewCtrl.review.diocese" class="form-control" placeholder="Write a short review of the church..." title="Review"></textarea>
+    </fieldset>
+    <fieldset class="form-group">
+      <input ng-model="reviewCtrl.review.name" type="text" class="form-control" placeholder="This will be automatically passed in" title="name" />
+    </fieldset>
+  </div>
+  <fieldset class="form-group">
+    <!-- Add javascript to append a readonly class to the review upon submission -->
+    <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+  </fieldset>
+</form>

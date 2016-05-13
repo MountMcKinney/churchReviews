@@ -25,13 +25,13 @@ i {
 .right-banner {
   position: fixed;
   right: 20px;
-  top: 120px;
+  top: 80px;
   padding: 10px 20px;
   background: rgba(243,13,75,1);
   text-align: center;
 }
 
-.right-banner a:link, .right-banner a:visited, .right-banner a:hover {
+a.link-collapse:link, a.link-collapse:visited, a.link-collapse:hover {
   color: #fff;
   background: #1B5E20;
   padding: 5px 20px;

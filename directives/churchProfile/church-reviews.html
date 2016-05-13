@@ -39,7 +39,7 @@
     </div>
     <div ng-controller="ChurchRatingCtrl">
       <strong>Welcomeness: </strong>
-      <uib-rating ng-model="reviewCtrl.review.welcomeStars" title="welcomeStars" max="max" read-only="isReadonly"></uib-rating>
+      <uib-rating ng-model="reviewCtrl.review.welcomeStars" title="welcomeStars" max="max" read-only="!isReadonly"></uib-rating>
       <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
     </div>
     <br>

@@ -1,10 +1,10 @@
 (function(){
-    var app = angular.module('list-directives', []);
+    var app = angular.module('church-profile-directives', []);
 
     app.directive("churchTitle", function() {
       return {
         restrict: 'E',
-        templateUrl: "../directives/searchResults/church-title.html"
+        templateUrl: "../directives/churchProfile/church-title.html"
       };
     });
 
@@ -12,7 +12,7 @@
     app.directive("churchInfo", function() {
       return {
         restrict: 'E',
-        templateUrl: "../directives/searchResults/church-info.html"
+        templateUrl: "../directives/churchProfile/church-info.html"
       };
     });
 
@@ -21,7 +21,7 @@
       return {
         scope: true,
         restrict: 'E',
-        templateUrl: "../directives/searchResults/church-favorite.html",
+        templateUrl: "../directives/churchProfile/church-favorite.html",
         link: function(scope, elem) {
           elem.bind('click', function() {
             scope.$apply(function(){
@@ -40,42 +40,42 @@
     app.directive("churchSundayMassTimes", function() {
       return {
         restrict: 'A',
-        templateUrl: "../directives/searchResults/church-sunday-mass-times.html"
+        templateUrl: "../directives/churchProfile/church-sunday-mass-times.html"
       };
     });
 
     app.directive("churchWeekdayMassTimes", function() {
       return {
         restrict: 'A',
-        templateUrl: "../directives/searchResults/church-weekday-mass-times.html"
+        templateUrl: "../directives/churchProfile/church-weekday-mass-times.html"
       };
     });
 
     app.directive("churchReviews", function() {
       return {
         restrict: 'E',
-        templateUrl: "../directives/searchResults/church-reviews.html"
+        templateUrl: "../directives/churchProfile/church-reviews.html"
       };
     });
 
     app.directive("churchDetails", function() {
       return {
         restrict:"A",
-        templateUrl: "../directives/searchResults/church-details.html"
+        templateUrl: "../directives/churchProfile/church-details.html"
       };
     });
 
     app.directive("churchTabs", function() {
       return {
         restrict: "E",
-        templateUrl: "../directives/searchResults/church-tabs.html",
+        templateUrl: "../directives/churchProfile/church-tabs.html",
       };
     });
 
     app.directive("churchGallery", function() {
       return {
         restrict: "E",
-        templateUrl: "../directives/searchResults/church-gallery.html",
+        templateUrl: "../directives/churchProfile/church-gallery.html",
         controller: function() {
           this.current = 0;
           this.setCurrent = function(imageNumber){
@@ -89,7 +89,14 @@
     app.directive("addChurch", function() {
       return {
         restrict: 'E',
-        templateUrl: "../directives/searchResults/add-church.html"
+        templateUrl: "../directives/churchProfile/add-church.html"
+      };
+    });
+
+    app.directive("addChurchForm", function() {
+      return {
+        restrict: 'E',
+        templateUrl: "../directives/churchProfile/add-church-form.html"
       };
     });
 

@@ -2,54 +2,62 @@
 <!-- It will allow users to learn more about what Church Search does, let them sign up/sign in, and contact us -->
 
 <!DOCTYPE html>
-<html ng-app="churchList">
+<html ng-app="churchSearch">
   <head>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script type="text/javascript" src="scripts/churchList.js"></script>
-    <script type="text/javascript" src="scripts/profile.js"></script>
-    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/directives/search-results.js"></script>
+    <script type="text/javascript" src="scripts/directives/search.js"></script>
+    <script type="text/javascript" src="scripts/directives/church-profile.js"></script>
+    <script type="text/javascript" src="scripts/directives/profile.js"></script>
+    <script type="text/javascript" src="scripts/directives/sign-in.js"></script>
+    <script type="text/javascript" src="scripts/directives/sign-up.js"></script>
+    <script type="text/javascript" src="scripts/directives/contact.js"></script>
+    <script type="text/javascript" src="scripts/directives/profile.js"></script>
+    <script type="text/javascript" src="scripts/controllers/app.js"></script>
     <title>Church Search</title>
     <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+  <body>
+    <!-- <div ng-view></div> -->
+    <div ng-controller="ListController as list">
+      <!--  List Header  -->
+      <header class="container">
+        <h1 class="text-center">Church Search</h1>
+        <h2 class="text-center">Find Your Match Made In Heaven</h2>
+      </header>
 
-  <body ng-controller="ListController as list">
-    <!--  List Header  -->
-    <header class="container">
-      <h1 class="text-center">Church Search</h1>
-      <h2 class="text-center">Find Your Match Made In Heaven</h2>
-    </header>
+      <!--  Churches Container  -->
+      <div class="list-group">
+        <!--  Church Container  -->
+        <div class="list-group-item" ng-repeat="church in list.churches">
+          <!-- Church Title -->
+          <div class="row">
+            <church-title class="col-md-12"></church-title>
+          </div>
+          <div class="row">
+            <!-- Image Gallery  -->
+            <church-gallery class="col-md-3"></church-gallery>
+            <!-- Info About the Church -->
+            <church-info class="col-md-3"></church-info>
+            <div church-sunday-mass-times class="col-md-3"></div>
+            <div church-weekday-mass-times class="col-md-3"></div>
+          </div>
+          <hr />
+          <div class="row">
+            <!-- Church Tabs  -->
+            <church-reviews class="col-md-12"></church-reviews>
 
-    <!--  Churches Container  -->
-    <div class="list-group">
-      <!--  Church Container  -->
-      <div class="list-group-item" ng-repeat="church in list.churches">
-        <!-- Church Title -->
-        <div class="row">
-          <church-title class="col-md-12"></church-title>
+            <!-- <church-tabs class="col-md-12"></church-tabs> -->
+          </div>
         </div>
-        <div class="row">
-          <!-- Image Gallery  -->
-          <church-gallery class="col-md-3"></church-gallery>
-          <!-- Info About the Church -->
-          <church-info class="col-md-3"></church-info>
-          <div church-sunday-mass-times class="col-md-3"></div>
-          <div church-weekday-mass-times class="col-md-3"></div>
-        </div>
-        <hr />
-        <div class="row">
-          <!-- Church Tabs  -->
-          <church-reviews class="col-md-12"></church-reviews>
+        <add-church>
+        </add-church>
 
-          <!-- <church-tabs class="col-md-12"></church-tabs> -->
-        </div>
       </div>
-      <add-church>
-      </add-church>
-
     </div>
   </body>
 </html>

@@ -1,0 +1,40 @@
+<!-- This page is to serve up the search results from a specific search -->
+<!-- It will dynamically generate inside the index.html file when a search is made -->
+<!-- It will display the results of that search as well as displaying the search module above it -->
+
+<div ng-controller="ListController as list">
+  <!--  List Header  -->
+  <header class="container">
+    <h1 class="text-center">Church Search</h1>
+    <h2 class="text-center">Find Your Match Made In Heaven</h2>
+  </header>
+
+  <!--  Churches Container  -->
+  <div class="list-group">
+    <!--  Church Container  -->
+    <div class="list-group-item" ng-repeat="church in list.churches">
+      <!-- Church Title -->
+      <div class="row">
+        <church-title class="col-md-12"></church-title>
+      </div>
+      <div class="row">
+        <!-- Image Gallery  -->
+        <church-gallery class="col-md-3"></church-gallery>
+        <!-- Info About the Church -->
+        <church-info class="col-md-3"></church-info>
+        <div church-sunday-mass-times class="col-md-3"></div>
+        <div church-weekday-mass-times class="col-md-3"></div>
+      </div>
+      <hr />
+      <div class="row">
+        <!-- Church Tabs  -->
+        <church-reviews class="col-md-12"></church-reviews>
+
+        <!-- <church-tabs class="col-md-12"></church-tabs> -->
+      </div>
+    </div>
+    <add-church>
+    </add-church>
+
+  </div>
+</div>
